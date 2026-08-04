@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Docker Two-Tier Application</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🚀 Docker Two-Tier Application</h1>
+
+    <p class="subtitle">
+        Flask + MySQL + Docker Networking Demo
+    </p>
+
+    <form method="POST">
+
+        <input
+            type="text"
+            name="message"
+            placeholder="Type your message here..."
+            required>
+
+        <button type="submit">
+            Save Message
+        </button>
+
+    </form>
+
+    <h2>📋 Stored Messages</h2>
+
+    <table>
+
+        <thead>
+
+        <tr>
+            <th>ID</th>
+            <th>Message</th>
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for row in messages %}
+
+        <tr>
+
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    <div class="footer">
+        Built with ❤️ using Flask, MySQL & Docker
+    </div>
+
+</div>
+
+</body>
+
+</html>
