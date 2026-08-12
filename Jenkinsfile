@@ -11,7 +11,6 @@ pipeline{
                 sh "docker build -t my-flask-app ."
             }
         }
-        
         stage('Push to docker Hub'){
             steps{
                 withCredentials([usernamePassword(
@@ -23,9 +22,8 @@ pipeline{
                     sh "docker image tag my-flask-app ${env.dockerHubUser}/my-flask-app-cicd"
                     sh "docker push ${env.dockerHubUser}/my-flask-app-cicd"
                 }
+                }
             }
-        }
-        
         stage('Test'){
             steps{
                 echo 'Tester will take care'
